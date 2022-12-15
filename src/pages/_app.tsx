@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>2023 Mandalart Maker</title>
+        <title>2023 만다라트 메이커</title>
       </Head>
       <Component {...pageProps} />
     </>
