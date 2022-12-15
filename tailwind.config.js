@@ -11,9 +11,11 @@ module.exports = {
       height: {
         693: '693px',
       },
-      backgroundImage: {
-        background:
-          'url(https://mandalart-bucket.s3.ap-northeast-2.amazonaws.com/images/background.png)',
+      colors: {
+        vivaMegenta: '#BB2649',
+        hover: '#D93060',
+        background: '#F2F0EB',
+        border: '#263056',
       },
     },
   },

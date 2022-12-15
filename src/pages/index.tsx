@@ -18,9 +18,11 @@ const Home: NextPage = () => {
   };
 
   return (
-    <main className="p-4 h-screen flex flex-col items-center space-y-4">
-      <h1 className="text-3xl">2023 만다라트 메이커</h1>
-      <div ref={captureArea} className="border border-black h-693 w-390">
+    <main className="px-4 py-6 flex flex-col items-center space-y-6">
+      <h1 className="py-4 text-3xl text-vivaMegenta">
+        2023 만다라트 메이커 🥕
+      </h1>
+      <div ref={captureArea} className="border-4 border-border">
         <Image
           src="https://mandalart-bucket.s3.ap-northeast-2.amazonaws.com/images/background.png"
           alt="2023 Mandalart"
@@ -30,9 +32,9 @@ const Home: NextPage = () => {
       </div>
       <button
         onClick={onCaptureButtonClick}
-        className="border rounded-lg px-24 py-2"
+        className="rounded-xl px-20 py-2 bg-vivaMegenta hover:bg-hover text-white text-xl"
       >
-        이미지 저장
+        이미지 저장 🍀
       </button>
     </main>
   );

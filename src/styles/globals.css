@@ -10,11 +10,11 @@
   font-style: normal;
 }
 
-html,
-body {
-  @apply w-screen h-screen;
+* {
+  font-family: 'KOTRAHOPE';
 }
 
-h1 {
-  font-family: 'KOTRAHOPE';
+html,
+body {
+  @apply w-screen h-screen bg-background;
 }
