@@ -18,3 +18,7 @@ html,
 body {
   @apply w-screen h-screen bg-background;
 }
+
+td {
+  @apply h-28;
+}

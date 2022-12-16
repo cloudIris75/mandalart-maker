@@ -1,10 +1,13 @@
 import html2canvas from 'html2canvas';
 import { NextPage } from 'next';
 import Image from 'next/image';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import Button from '../components/Button';
+import Modal from '../components/Modal';
 
 const Home: NextPage = () => {
   const captureArea = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   const onCaptureButtonClick = () => {
     if (captureArea.current) {
@@ -22,13 +25,52 @@ const Home: NextPage = () => {
       <h1 className="py-4 text-3xl text-vivaMegenta">
         2023 만다라트 메이커 🥕
       </h1>
-      <div ref={captureArea} className="border-4 border-border">
+      <div ref={captureArea} className="relative border-4 border-border">
         <Image
           src="https://mandalart-bucket.s3.ap-northeast-2.amazonaws.com/images/background.png"
           alt="2023 Mandalart"
           width={390}
           height={693}
+          className="z-0"
         ></Image>
+        <table className="absolute top-1/4 left-0 z-1 w-full">
+          <tbody>
+            <tr>
+              <td>
+                <Button setIsVisible={setIsVisible} />
+              </td>
+              <td>
+                <Button setIsVisible={setIsVisible} />
+              </td>
+              <td>
+                <Button setIsVisible={setIsVisible} />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <Button setIsVisible={setIsVisible} />
+              </td>
+              <td>
+                <Button setIsVisible={setIsVisible} />
+              </td>
+              <td>
+                <Button setIsVisible={setIsVisible} />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <Button setIsVisible={setIsVisible} />
+              </td>
+              <td>
+                <Button setIsVisible={setIsVisible} />
+              </td>
+              <td>
+                <Button setIsVisible={setIsVisible} />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <Modal isVisible={isVisible} />
       </div>
       <button
         onClick={onCaptureButtonClick}
