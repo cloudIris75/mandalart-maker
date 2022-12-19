@@ -5,11 +5,9 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ setIsVisible }) => {
-  const onButtonClick = () => {
-    setIsVisible(true);
-  };
-
-  return <button onClick={onButtonClick} className="w-full h-full"></button>;
+  return (
+    <div onClick={() => setIsVisible(true)} className="w-full h-full"></div>
+  );
 };
 
 export default Button;

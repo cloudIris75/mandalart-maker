@@ -70,7 +70,7 @@ const Home: NextPage = () => {
             </tr>
           </tbody>
         </table>
-        <Modal isVisible={isVisible} />
+        <Modal isVisible={isVisible} setIsVisible={setIsVisible} />
       </div>
       <button
         onClick={onCaptureButtonClick}
