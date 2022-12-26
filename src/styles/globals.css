@@ -14,9 +14,12 @@
   font-family: 'KOTRAHOPE';
 }
 
-html,
-body {
+html {
   @apply w-screen h-screen bg-background;
+}
+
+body {
+  @apply w-390 h-844 bg-background m-auto;
 }
 
 .table-lg td {

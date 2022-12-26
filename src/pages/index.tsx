@@ -34,7 +34,7 @@ const Home: NextPage = () => {
           height={693}
           className="z-10"
         ></Image>
-        <table className="table-lg absolute top-32 left-0 z-10 w-full border-separate border-spacing-y-2">
+        <table className="table-lg absolute top-32 left-0 w-full border-separate border-spacing-y-2">
           <tbody>
             <tr>
               <td>

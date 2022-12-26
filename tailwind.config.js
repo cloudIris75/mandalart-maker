@@ -10,6 +10,7 @@ module.exports = {
       },
       height: {
         693: '693px',
+        844: '844px',
       },
       colors: {
         vivaMegenta: '#BB2649',

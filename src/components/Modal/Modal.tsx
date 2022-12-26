@@ -49,6 +49,18 @@ const backgroundImages = [
   },
 ];
 
+interface Goals {
+  1: string;
+  2: string;
+  3: string;
+  4: string;
+  5: string;
+  6: string;
+  7: string;
+  8: string;
+  9: string;
+}
+
 interface ModalProps {
   number: number;
   isVisible: boolean;
@@ -58,7 +70,7 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({ number, isVisible, setIsVisible }) => {
   const background = useRef<HTMLDivElement>(null);
   const modal = useRef<HTMLDivElement>(null);
-  const [goals, setGoals] = useState({
+  const [goals, setGoals] = useState<Goals>({
     1: '',
     2: '',
     3: '',
@@ -140,12 +152,16 @@ const Modal: React.FC<ModalProps> = ({ number, isVisible, setIsVisible }) => {
                     />
                   </td>
                   <td>
-                    <textarea
-                      name="5"
-                      value={goals[5]}
-                      onChange={onTextareaChange}
-                      rows={2}
-                    />
+                    {number !== 5 ? (
+                      <textarea
+                        name="5"
+                        value={goals[5]}
+                        onChange={onTextareaChange}
+                        rows={2}
+                      />
+                    ) : (
+                      <></>
+                    )}
                   </td>
                   <td>
                     <textarea
