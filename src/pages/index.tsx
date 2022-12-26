@@ -8,6 +8,7 @@ import Modal from '../components/Modal';
 const Home: NextPage = () => {
   const captureArea = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [number, setNumber] = useState(1);
 
   const onCaptureButtonClick = () => {
     if (captureArea.current) {
@@ -37,40 +38,80 @@ const Home: NextPage = () => {
           <tbody>
             <tr>
               <td>
-                <Button setIsVisible={setIsVisible} />
+                <Button
+                  number={1}
+                  setNumber={setNumber}
+                  setIsVisible={setIsVisible}
+                />
               </td>
               <td>
-                <Button setIsVisible={setIsVisible} />
+                <Button
+                  number={2}
+                  setNumber={setNumber}
+                  setIsVisible={setIsVisible}
+                />
               </td>
               <td>
-                <Button setIsVisible={setIsVisible} />
+                <Button
+                  number={3}
+                  setNumber={setNumber}
+                  setIsVisible={setIsVisible}
+                />
               </td>
             </tr>
             <tr>
               <td>
-                <Button setIsVisible={setIsVisible} />
+                <Button
+                  number={4}
+                  setNumber={setNumber}
+                  setIsVisible={setIsVisible}
+                />
               </td>
               <td>
-                <Button setIsVisible={setIsVisible} />
+                <Button
+                  number={5}
+                  setNumber={setNumber}
+                  setIsVisible={setIsVisible}
+                />
               </td>
               <td>
-                <Button setIsVisible={setIsVisible} />
+                <Button
+                  number={6}
+                  setNumber={setNumber}
+                  setIsVisible={setIsVisible}
+                />
               </td>
             </tr>
             <tr>
               <td>
-                <Button setIsVisible={setIsVisible} />
+                <Button
+                  number={7}
+                  setNumber={setNumber}
+                  setIsVisible={setIsVisible}
+                />
               </td>
               <td>
-                <Button setIsVisible={setIsVisible} />
+                <Button
+                  number={8}
+                  setNumber={setNumber}
+                  setIsVisible={setIsVisible}
+                />
               </td>
               <td>
-                <Button setIsVisible={setIsVisible} />
+                <Button
+                  number={9}
+                  setNumber={setNumber}
+                  setIsVisible={setIsVisible}
+                />
               </td>
             </tr>
           </tbody>
         </table>
-        <Modal isVisible={isVisible} setIsVisible={setIsVisible} />
+        <Modal
+          number={number}
+          isVisible={isVisible}
+          setIsVisible={setIsVisible}
+        />
       </div>
       <button
         onClick={onCaptureButtonClick}
