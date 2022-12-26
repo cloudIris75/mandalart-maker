@@ -32,9 +32,9 @@ const Home: NextPage = () => {
           alt="2023 Mandalart"
           width={390}
           height={693}
-          className="z-0"
+          className="z-10"
         ></Image>
-        <table className="absolute top-1/4 left-0 z-1 w-full">
+        <table className="table-lg absolute top-32 left-0 z-10 w-full border-separate border-spacing-y-2">
           <tbody>
             <tr>
               <td>

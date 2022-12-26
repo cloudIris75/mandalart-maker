@@ -75,7 +75,7 @@ const Modal: React.FC<ModalProps> = ({ number, isVisible, setIsVisible }) => {
               setIsVisible(false);
             }
           }}
-          className="absolute top-0 left-0 w-full h-full z-2 pointer-events-auto"
+          className="absolute top-0 left-0 w-full h-full z-20 pointer-events-auto"
         >
           <div className="relative top-1/4 left-0 w-full pointer-events-none">
             <Image
@@ -85,22 +85,40 @@ const Modal: React.FC<ModalProps> = ({ number, isVisible, setIsVisible }) => {
               height={693}
               className="bg-white border border-border"
             ></Image>
-            <table className="absolute top-0 left-0 z-3 w-full text-center border-separate border-spacing-y-2">
+            <table className="table-lg absolute top-0 left-0 z-30 w-full text-center">
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>2</td>
-                  <td>3</td>
+                  <td>
+                    <input type="text" />
+                  </td>
+                  <td>
+                    <input type="text" />
+                  </td>
+                  <td>
+                    <input type="text" />
+                  </td>
                 </tr>
                 <tr>
-                  <td>4</td>
-                  <td>5</td>
-                  <td>6</td>
+                  <td>
+                    <input type="text" />
+                  </td>
+                  <td>
+                    <input type="text" />
+                  </td>
+                  <td>
+                    <input type="text" />
+                  </td>
                 </tr>
                 <tr>
-                  <td>7</td>
-                  <td>8</td>
-                  <td>9</td>
+                  <td>
+                    <input type="text" />
+                  </td>
+                  <td>
+                    <input type="text" />
+                  </td>
+                  <td>
+                    <input type="text" />
+                  </td>
                 </tr>
               </tbody>
             </table>

@@ -19,6 +19,14 @@ body {
   @apply w-screen h-screen bg-background;
 }
 
-td {
-  @apply h-28;
+.table-lg td {
+  @apply h-28 w-28;
+}
+
+.table-sm td {
+  @apply h-9 w-9 text-xs;
+}
+
+input {
+  @apply h-24 w-24 border-none bg-transparent;
 }
