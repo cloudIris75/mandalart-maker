@@ -27,6 +27,6 @@ body {
   @apply h-9 w-9 text-xs;
 }
 
-input {
-  @apply h-24 w-24 border-none bg-transparent;
+textarea {
+  @apply h-24 w-24 border-none bg-transparent text-3xl text-center mt-2 pt-3 resize-none;
 }

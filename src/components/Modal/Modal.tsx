@@ -56,7 +56,19 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ number, isVisible, setIsVisible }) => {
+  const background = useRef<HTMLDivElement>(null);
   const modal = useRef<HTMLDivElement>(null);
+  const [goals, setGoals] = useState({
+    1: '',
+    2: '',
+    3: '',
+    4: '',
+    5: '',
+    6: '',
+    7: '',
+    8: '',
+    9: '',
+  });
   const [backgroundURL, SetBackgroundURL] = useState('');
   const imageURL = backgroundImages.filter((image) => image.id === number)[0]
     .image;
@@ -65,19 +77,24 @@ const Modal: React.FC<ModalProps> = ({ number, isVisible, setIsVisible }) => {
     SetBackgroundURL(imageURL);
   }, [imageURL]);
 
+  const onTextareaChange = (e: any) => {
+    const { name, value } = e.target;
+    setGoals((prevState) => ({ ...prevState, [name]: value }));
+  };
+
   return (
     <>
       {isVisible ? (
         <div
-          ref={modal}
+          ref={background}
           onClick={(e) => {
-            if (e.target === modal.current) {
+            if (e.target !== modal.current && e.target === background.current) {
               setIsVisible(false);
             }
           }}
-          className="absolute top-0 left-0 w-full h-full z-20 pointer-events-auto"
+          className="absolute top-0 left-0 w-full h-full z-20"
         >
-          <div className="relative top-1/4 left-0 w-full pointer-events-none">
+          <div ref={modal} className="relative top-1/4 left-0 w-full z-30">
             <Image
               src={backgroundURL}
               alt="Mandalart Table"
@@ -85,39 +102,84 @@ const Modal: React.FC<ModalProps> = ({ number, isVisible, setIsVisible }) => {
               height={693}
               className="bg-white border border-border"
             ></Image>
-            <table className="table-lg absolute top-0 left-0 z-30 w-full text-center">
+            <table className="table-lg absolute top-0 left-0 w-full text-center">
               <tbody>
                 <tr>
                   <td>
-                    <input type="text" />
+                    <textarea
+                      name="1"
+                      value={goals[1]}
+                      onChange={onTextareaChange}
+                      rows={2}
+                    />
                   </td>
                   <td>
-                    <input type="text" />
+                    <textarea
+                      name="2"
+                      value={goals[2]}
+                      onChange={onTextareaChange}
+                      rows={2}
+                    />
                   </td>
                   <td>
-                    <input type="text" />
+                    <textarea
+                      name="3"
+                      value={goals[3]}
+                      onChange={onTextareaChange}
+                      rows={2}
+                    />
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <input type="text" />
+                    <textarea
+                      name="4"
+                      value={goals[4]}
+                      onChange={onTextareaChange}
+                      rows={2}
+                    />
                   </td>
                   <td>
-                    <input type="text" />
+                    <textarea
+                      name="5"
+                      value={goals[5]}
+                      onChange={onTextareaChange}
+                      rows={2}
+                    />
                   </td>
                   <td>
-                    <input type="text" />
+                    <textarea
+                      name="6"
+                      value={goals[6]}
+                      onChange={onTextareaChange}
+                      rows={2}
+                    />
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <input type="text" />
+                    <textarea
+                      name="7"
+                      value={goals[7]}
+                      onChange={onTextareaChange}
+                      rows={2}
+                    />
                   </td>
                   <td>
-                    <input type="text" />
+                    <textarea
+                      name="8"
+                      value={goals[8]}
+                      onChange={onTextareaChange}
+                      rows={2}
+                    />
                   </td>
                   <td>
-                    <input type="text" />
+                    <textarea
+                      name="9"
+                      value={goals[9]}
+                      onChange={onTextareaChange}
+                      rows={2}
+                    />
                   </td>
                 </tr>
               </tbody>
