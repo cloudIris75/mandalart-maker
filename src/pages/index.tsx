@@ -8,7 +8,17 @@ import Modal from '../components/Modal';
 const Home: NextPage = () => {
   const captureArea = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [number, setNumber] = useState(1);
+  const [number, setNumber] = useState(0);
+  const [goals, setGoals] = useState<string[][]>([
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+  ]);
 
   const onCaptureButtonClick = () => {
     if (captureArea.current) {
@@ -39,9 +49,18 @@ const Home: NextPage = () => {
             <tr>
               <td>
                 <Button
+                  number={0}
+                  setNumber={setNumber}
+                  setIsVisible={setIsVisible}
+                  goals={goals}
+                />
+              </td>
+              <td>
+                <Button
                   number={1}
                   setNumber={setNumber}
                   setIsVisible={setIsVisible}
+                  goals={goals}
                 />
               </td>
               <td>
@@ -49,22 +68,25 @@ const Home: NextPage = () => {
                   number={2}
                   setNumber={setNumber}
                   setIsVisible={setIsVisible}
-                />
-              </td>
-              <td>
-                <Button
-                  number={3}
-                  setNumber={setNumber}
-                  setIsVisible={setIsVisible}
+                  goals={goals}
                 />
               </td>
             </tr>
             <tr>
               <td>
                 <Button
+                  number={3}
+                  setNumber={setNumber}
+                  setIsVisible={setIsVisible}
+                  goals={goals}
+                />
+              </td>
+              <td>
+                <Button
                   number={4}
                   setNumber={setNumber}
                   setIsVisible={setIsVisible}
+                  goals={goals}
                 />
               </td>
               <td>
@@ -72,22 +94,25 @@ const Home: NextPage = () => {
                   number={5}
                   setNumber={setNumber}
                   setIsVisible={setIsVisible}
-                />
-              </td>
-              <td>
-                <Button
-                  number={6}
-                  setNumber={setNumber}
-                  setIsVisible={setIsVisible}
+                  goals={goals}
                 />
               </td>
             </tr>
             <tr>
               <td>
                 <Button
+                  number={6}
+                  setNumber={setNumber}
+                  setIsVisible={setIsVisible}
+                  goals={goals}
+                />
+              </td>
+              <td>
+                <Button
                   number={7}
                   setNumber={setNumber}
                   setIsVisible={setIsVisible}
+                  goals={goals}
                 />
               </td>
               <td>
@@ -95,13 +120,7 @@ const Home: NextPage = () => {
                   number={8}
                   setNumber={setNumber}
                   setIsVisible={setIsVisible}
-                />
-              </td>
-              <td>
-                <Button
-                  number={9}
-                  setNumber={setNumber}
-                  setIsVisible={setIsVisible}
+                  goals={goals}
                 />
               </td>
             </tr>
@@ -111,6 +130,8 @@ const Home: NextPage = () => {
           number={number}
           isVisible={isVisible}
           setIsVisible={setIsVisible}
+          goals={goals}
+          setGoals={setGoals}
         />
       </div>
       <button

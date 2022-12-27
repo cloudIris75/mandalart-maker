@@ -49,49 +49,38 @@ const backgroundImages = [
   },
 ];
 
-interface Goals {
-  1: string;
-  2: string;
-  3: string;
-  4: string;
-  5: string;
-  6: string;
-  7: string;
-  8: string;
-  9: string;
-}
-
 interface ModalProps {
   number: number;
   isVisible: boolean;
   setIsVisible: Dispatch<SetStateAction<boolean>>;
+  goals: string[][];
+  setGoals: Dispatch<SetStateAction<string[][]>>;
 }
 
-const Modal: React.FC<ModalProps> = ({ number, isVisible, setIsVisible }) => {
+const Modal: React.FC<ModalProps> = ({
+  number,
+  isVisible,
+  setIsVisible,
+  goals,
+  setGoals,
+}) => {
   const background = useRef<HTMLDivElement>(null);
   const modal = useRef<HTMLDivElement>(null);
-  const [goals, setGoals] = useState<Goals>({
-    1: '',
-    2: '',
-    3: '',
-    4: '',
-    5: '',
-    6: '',
-    7: '',
-    8: '',
-    9: '',
-  });
   const [backgroundURL, SetBackgroundURL] = useState('');
-  const imageURL = backgroundImages.filter((image) => image.id === number)[0]
-    .image;
+  const imageURL = backgroundImages.filter(
+    (image) => image.id === number + 1
+  )[0].image;
 
   useEffect(() => {
     SetBackgroundURL(imageURL);
   }, [imageURL]);
 
-  const onTextareaChange = (e: any) => {
+  const onTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setGoals((prevState) => ({ ...prevState, [name]: value }));
+    const prevArray = goals;
+    goals[number][Number(name) - 1] = value;
+    const resultArray = [...prevArray];
+    setGoals(resultArray);
   };
 
   return (
@@ -120,7 +109,7 @@ const Modal: React.FC<ModalProps> = ({ number, isVisible, setIsVisible }) => {
                   <td>
                     <textarea
                       name="1"
-                      value={goals[1]}
+                      value={goals[number][0]}
                       onChange={onTextareaChange}
                       rows={2}
                     />
@@ -128,7 +117,7 @@ const Modal: React.FC<ModalProps> = ({ number, isVisible, setIsVisible }) => {
                   <td>
                     <textarea
                       name="2"
-                      value={goals[2]}
+                      value={goals[number][1]}
                       onChange={onTextareaChange}
                       rows={2}
                     />
@@ -136,7 +125,7 @@ const Modal: React.FC<ModalProps> = ({ number, isVisible, setIsVisible }) => {
                   <td>
                     <textarea
                       name="3"
-                      value={goals[3]}
+                      value={goals[number][2]}
                       onChange={onTextareaChange}
                       rows={2}
                     />
@@ -146,16 +135,16 @@ const Modal: React.FC<ModalProps> = ({ number, isVisible, setIsVisible }) => {
                   <td>
                     <textarea
                       name="4"
-                      value={goals[4]}
+                      value={goals[number][3]}
                       onChange={onTextareaChange}
                       rows={2}
                     />
                   </td>
                   <td>
-                    {number !== 5 ? (
+                    {number !== 4 ? (
                       <textarea
                         name="5"
-                        value={goals[5]}
+                        value={goals[number][4]}
                         onChange={onTextareaChange}
                         rows={2}
                       />
@@ -166,7 +155,7 @@ const Modal: React.FC<ModalProps> = ({ number, isVisible, setIsVisible }) => {
                   <td>
                     <textarea
                       name="6"
-                      value={goals[6]}
+                      value={goals[number][5]}
                       onChange={onTextareaChange}
                       rows={2}
                     />
@@ -176,7 +165,7 @@ const Modal: React.FC<ModalProps> = ({ number, isVisible, setIsVisible }) => {
                   <td>
                     <textarea
                       name="7"
-                      value={goals[7]}
+                      value={goals[number][6]}
                       onChange={onTextareaChange}
                       rows={2}
                     />
@@ -184,7 +173,7 @@ const Modal: React.FC<ModalProps> = ({ number, isVisible, setIsVisible }) => {
                   <td>
                     <textarea
                       name="8"
-                      value={goals[8]}
+                      value={goals[number][7]}
                       onChange={onTextareaChange}
                       rows={2}
                     />
@@ -192,7 +181,7 @@ const Modal: React.FC<ModalProps> = ({ number, isVisible, setIsVisible }) => {
                   <td>
                     <textarea
                       name="9"
-                      value={goals[9]}
+                      value={goals[number][8]}
                       onChange={onTextareaChange}
                       rows={2}
                     />
