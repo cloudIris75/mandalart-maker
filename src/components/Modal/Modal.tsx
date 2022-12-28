@@ -66,14 +66,18 @@ const Modal: React.FC<ModalProps> = ({
 }) => {
   const background = useRef<HTMLDivElement>(null);
   const modal = useRef<HTMLDivElement>(null);
-  const [backgroundURL, SetBackgroundURL] = useState('');
+  const [backgroundURL, setBackgroundURL] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const imageURL = backgroundImages.find((image) => image.id === number + 1);
-    if (imageURL) {
-      SetBackgroundURL(imageURL.image);
+    const selectedImage = backgroundImages.find(
+      (image) => image.id === number + 1
+    );
+    if (isVisible && selectedImage) {
+      setBackgroundURL(selectedImage.image);
+      setIsOpen(true);
     }
-  }, [number]);
+  }, [number, isVisible]);
 
   const onTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -89,11 +93,12 @@ const Modal: React.FC<ModalProps> = ({
 
   return (
     <>
-      {isVisible ? (
+      {isOpen ? (
         <div
           ref={background}
           onClick={(e) => {
             if (e.target !== modal.current && e.target === background.current) {
+              setIsOpen(false);
               setIsVisible(false);
             }
           }}
