@@ -16,7 +16,10 @@
 
 pre {
   font-family: 'KOTRAHOPE';
-  @apply w-fit rounded-md m-auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  @apply w-8 rounded-md m-auto break-keep overflow-hidden;
 }
 
 html {
