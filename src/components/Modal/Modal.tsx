@@ -105,7 +105,7 @@ const Modal: React.FC<ModalProps> = ({
               alt="Mandalart Table"
               width={390}
               height={390}
-              className="bg-white border border-border"
+              className="bg-white outline outline-border rounded-md"
             ></Image>
             <table className="table-lg absolute top-0 left-0 w-full text-center">
               <tbody>
