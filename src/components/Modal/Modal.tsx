@@ -49,11 +49,6 @@ const backgroundImages = [
   },
 ];
 
-interface BackgroundImage {
-  id: number;
-  image: string;
-}
-
 interface ModalProps {
   number: number;
   isVisible: boolean;
@@ -71,21 +66,14 @@ const Modal: React.FC<ModalProps> = ({
 }) => {
   const background = useRef<HTMLDivElement>(null);
   const modal = useRef<HTMLDivElement>(null);
-  const [backgroundURL, setBackgroundURL] = useState('');
-  const [backgroundImage, setBackgroundImage] = useState<BackgroundImage>();
+  const [backgroundURL, SetBackgroundURL] = useState('');
 
   useEffect(() => {
-    const selectedImage = backgroundImages.find(
-      (image) => image.id === number + 1
-    );
-    setBackgroundImage(selectedImage);
-  }, [number]);
-
-  useEffect(() => {
-    if (backgroundImage) {
-      setBackgroundURL(backgroundImage.image);
+    const imageURL = backgroundImages.find((image) => image.id === number + 1);
+    if (imageURL) {
+      SetBackgroundURL(imageURL.image);
     }
-  }, [backgroundImage]);
+  }, [number]);
 
   const onTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { name, value } = e.target;
