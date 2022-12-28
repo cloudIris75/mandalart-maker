@@ -73,7 +73,7 @@ const Modal: React.FC<ModalProps> = ({
 
   useEffect(() => {
     SetBackgroundURL(imageURL);
-  }, [number, imageURL]);
+  }, [imageURL]);
 
   const onTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { name, value } = e.target;
