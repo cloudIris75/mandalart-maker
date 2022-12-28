@@ -61,9 +61,10 @@ const Home: NextPage = () => {
           alt="2023 Mandalart"
           width={390}
           height={693}
-          className="z-10"
+          className="z-10 object-cover"
+          quality={100}
         ></Image>
-        <table className="table-lg absolute top-32 left-0 w-full border-separate border-spacing-y-2">
+        <table className="table-lg absolute top-32 left-0 w-full border-separate border-spacing-y-3">
           <tbody>
             <tr>
               <td>
