@@ -16,7 +16,7 @@
 
 pre {
   font-family: 'KOTRAHOPE';
-  @apply w-fit mx-auto rounded-md;
+  @apply w-fit rounded-md m-auto;
 }
 
 html {
@@ -27,6 +27,10 @@ body {
   @apply w-390 h-844 bg-background m-auto;
 }
 
+textarea {
+  @apply h-24 w-24 border-none bg-transparent text-3xl text-center mt-2 pt-4 resize-none;
+}
+
 .table-lg td {
   @apply h-28 w-28;
 }
@@ -35,6 +39,6 @@ body {
   @apply h-9 w-9 text-xs;
 }
 
-textarea {
-  @apply h-24 w-24 border-none bg-transparent text-3xl text-center mt-2 pt-4 resize-none;
+.button {
+  @apply rounded-xl w-60 py-2 bg-vivaMegenta hover:bg-hover text-white text-xl;
 }

@@ -1,7 +1,7 @@
 import html2canvas from 'html2canvas';
 import { NextPage } from 'next';
 import Image from 'next/image';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Button from '../components/Button';
 import Modal from '../components/Modal';
 
@@ -21,6 +21,14 @@ const Home: NextPage = () => {
     [],
   ]);
 
+  useEffect(() => {
+    const prevGoals = localStorage.getItem('key');
+    if (prevGoals) {
+      const prevGoalsArray = JSON.parse(prevGoals);
+      setGoals(prevGoalsArray);
+    }
+  }, []);
+
   const onCaptureButtonClick = () => {
     if (captureArea.current) {
       html2canvas(captureArea.current).then(function (canvas) {
@@ -32,11 +40,18 @@ const Home: NextPage = () => {
     }
   };
 
+  const onResetButtonClick = () => {
+    const confirm = window.confirm('만다라트를 정말 초기화하시나요?');
+    if (confirm) {
+      const resetArray = [[], [], [], [], [], [], [], [], []];
+      setGoals(resetArray);
+      localStorage.setItem('key', JSON.stringify(resetArray));
+    }
+  };
+
   return (
     <main className="px-4 py-6 flex flex-col items-center space-y-6">
-      <h1 className="py-4 text-3xl text-vivaMegenta">
-        2023 만다라트 메이커 🥕
-      </h1>
+      <h1 className="text-3xl text-vivaMegenta">2023 만다라트 메이커 🥕</h1>
       <div ref={captureArea} className="relative border-4 border-border">
         <Image
           src="https://mandalart-bucket.s3.ap-northeast-2.amazonaws.com/images/background.png"
@@ -135,12 +150,14 @@ const Home: NextPage = () => {
           setGoals={setGoals}
         />
       </div>
-      <button
-        onClick={onCaptureButtonClick}
-        className="rounded-xl px-20 py-2 bg-vivaMegenta hover:bg-hover text-white text-xl"
-      >
-        이미지 저장 🍀
-      </button>
+      <div className="flex flex-col justify-center items-center space-y-4">
+        <button onClick={onCaptureButtonClick} className="button">
+          이미지 저장 🍀
+        </button>
+        <button onClick={onResetButtonClick} className="button">
+          초기화
+        </button>
+      </div>
     </main>
   );
 };

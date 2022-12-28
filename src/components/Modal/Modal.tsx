@@ -84,6 +84,7 @@ const Modal: React.FC<ModalProps> = ({
     }
     const resultArray = [...prevArray];
     setGoals(resultArray);
+    localStorage.setItem('key', JSON.stringify(resultArray));
   };
 
   return (
