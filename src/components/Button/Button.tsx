@@ -24,37 +24,53 @@ const Button: React.FC<ButtonProps> = ({
         <tbody>
           <tr>
             <td>
-              <pre>{goals[number] ? goals[number][0] : ''}</pre>
+              <pre className={number !== 4 ? 'bg-white' : 'bg-none'}>
+                {goals[number] ? goals[number][0] : ''}
+              </pre>
             </td>
             <td>
-              <pre>{goals[number] ? goals[number][1] : ''}</pre>
+              <pre className={number !== 4 ? 'bg-white' : 'bg-none'}>
+                {goals[number] ? goals[number][1] : ''}
+              </pre>
             </td>
             <td>
-              <pre>{goals[number] ? goals[number][2] : ''}</pre>
+              <pre className={number !== 4 ? 'bg-white' : 'bg-none'}>
+                {goals[number] ? goals[number][2] : ''}
+              </pre>
             </td>
           </tr>
           <tr>
             <td>
-              <pre>{goals[number] ? goals[number][3] : ''}</pre>
+              <pre className={number !== 4 ? 'bg-white' : 'bg-none'}>
+                {goals[number] ? goals[number][3] : ''}
+              </pre>
             </td>
             <td>
-              <pre>
+              <pre className="bg-none">
                 {number !== 4 ? (goals[4] ? goals[4][number] : '') : ''}
               </pre>
             </td>
             <td>
-              <pre>{goals[number] ? goals[number][5] : ''}</pre>
+              <pre className={number !== 4 ? 'bg-white' : 'bg-none'}>
+                {goals[number] ? goals[number][5] : ''}
+              </pre>
             </td>
           </tr>
           <tr>
             <td>
-              <pre>{goals[number] ? goals[number][6] : ''}</pre>
+              <pre className={number !== 4 ? 'bg-white' : 'bg-none'}>
+                {goals[number] ? goals[number][6] : ''}
+              </pre>
             </td>
             <td>
-              <pre>{goals[number] ? goals[number][7] : ''}</pre>
+              <pre className={number !== 4 ? 'bg-white' : 'bg-none'}>
+                {goals[number] ? goals[number][7] : ''}
+              </pre>
             </td>
             <td>
-              <pre>{goals[number] ? goals[number][8] : ''}</pre>
+              <pre className={number !== 4 ? 'bg-white' : 'bg-none'}>
+                {goals[number] ? goals[number][8] : ''}
+              </pre>
             </td>
           </tr>
         </tbody>

@@ -10,9 +10,13 @@
   font-style: normal;
 }
 
-*,
+* {
+  font-family: 'KOTRAHOPE';
+}
+
 pre {
   font-family: 'KOTRAHOPE';
+  @apply w-fit mx-auto rounded-md;
 }
 
 html {
