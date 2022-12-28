@@ -67,13 +67,13 @@ const Modal: React.FC<ModalProps> = ({
   const background = useRef<HTMLDivElement>(null);
   const modal = useRef<HTMLDivElement>(null);
   const [backgroundURL, SetBackgroundURL] = useState('');
-  const imageURL = backgroundImages.filter(
-    (image) => image.id === number + 1
-  )[0].image;
 
   useEffect(() => {
-    SetBackgroundURL(imageURL);
-  }, [imageURL]);
+    const imageURL = backgroundImages.find((image) => image.id === number + 1);
+    if (imageURL) {
+      SetBackgroundURL(imageURL.image);
+    }
+  }, [number]);
 
   const onTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { name, value } = e.target;
