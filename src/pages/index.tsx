@@ -54,17 +54,15 @@ const Home: NextPage = () => {
       <h1 className="text-3xl text-vivaMegenta">2023 만다라트 메이커 🥕</h1>
       <div
         ref={captureArea}
-        className="relative outline outline-4 outline-border"
+        className="relative outline outline-4 outline-border w-350 h-630"
       >
         <Image
           src="https://mandalart-bucket.s3.ap-northeast-2.amazonaws.com/images/background.png"
           alt="2023 Mandalart"
-          width={390}
-          height={693}
-          className="z-10 object-cover"
+          fill
           quality={100}
         ></Image>
-        <table className="table-lg absolute top-32 left-0 w-full border-separate border-spacing-y-3">
+        <table className="table-lg z-10 absolute top-32 left-0 w-full border-separate border-spacing-y-2">
           <tbody>
             <tr>
               <td>
