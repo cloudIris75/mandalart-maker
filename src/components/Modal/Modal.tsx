@@ -79,6 +79,9 @@ const Modal: React.FC<ModalProps> = ({
     const { name, value } = e.target;
     const prevArray = goals;
     goals[number][Number(name) - 1] = value;
+    if (name === '5') {
+      goals[4][number] = value;
+    }
     const resultArray = [...prevArray];
     setGoals(resultArray);
   };
@@ -144,7 +147,7 @@ const Modal: React.FC<ModalProps> = ({
                     {number !== 4 ? (
                       <textarea
                         name="5"
-                        value={goals[number][4]}
+                        value={goals[4][number]}
                         onChange={onTextareaChange}
                         rows={2}
                       />

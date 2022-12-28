@@ -10,7 +10,8 @@
   font-style: normal;
 }
 
-* {
+*,
+pre {
   font-family: 'KOTRAHOPE';
 }
 
@@ -31,5 +32,5 @@ body {
 }
 
 textarea {
-  @apply h-24 w-24 border-none bg-transparent text-3xl text-center mt-2 pt-3 resize-none;
+  @apply h-24 w-24 border-none bg-transparent text-3xl text-center mt-2 pt-4 resize-none;
 }

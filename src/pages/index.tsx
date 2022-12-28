@@ -18,6 +18,7 @@ const Home: NextPage = () => {
     [],
     [],
     [],
+    [],
   ]);
 
   const onCaptureButtonClick = () => {

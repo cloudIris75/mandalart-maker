@@ -23,21 +23,39 @@ const Button: React.FC<ButtonProps> = ({
       <table className="table-sm text-center w-full h-full">
         <tbody>
           <tr>
-            <td>{goals[number] ? goals[number][0] : ''}</td>
-            <td>{goals[number] ? goals[number][1] : ''}</td>
-            <td>{goals[number] ? goals[number][2] : ''}</td>
-          </tr>
-          <tr>
-            <td>{goals[number] ? goals[number][3] : ''}</td>
             <td>
-              {number !== 4 ? (goals[number] ? goals[number][4] : '') : ''}
+              <pre>{goals[number] ? goals[number][0] : ''}</pre>
             </td>
-            <td>{goals[number] ? goals[number][5] : ''}</td>
+            <td>
+              <pre>{goals[number] ? goals[number][1] : ''}</pre>
+            </td>
+            <td>
+              <pre>{goals[number] ? goals[number][2] : ''}</pre>
+            </td>
           </tr>
           <tr>
-            <td>{goals[number] ? goals[number][6] : ''}</td>
-            <td>{goals[number] ? goals[number][7] : ''}</td>
-            <td>{goals[number] ? goals[number][8] : ''}</td>
+            <td>
+              <pre>{goals[number] ? goals[number][3] : ''}</pre>
+            </td>
+            <td>
+              <pre>
+                {number !== 4 ? (goals[4] ? goals[4][number] : '') : ''}
+              </pre>
+            </td>
+            <td>
+              <pre>{goals[number] ? goals[number][5] : ''}</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <pre>{goals[number] ? goals[number][6] : ''}</pre>
+            </td>
+            <td>
+              <pre>{goals[number] ? goals[number][7] : ''}</pre>
+            </td>
+            <td>
+              <pre>{goals[number] ? goals[number][8] : ''}</pre>
+            </td>
           </tr>
         </tbody>
       </table>
