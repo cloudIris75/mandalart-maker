@@ -157,7 +157,7 @@ const Home: NextPage = () => {
           이미지 저장 🍀
         </button>
         <button onClick={onResetButtonClick} className="button">
-          초기화
+          초기화 🚨
         </button>
       </div>
     </main>
