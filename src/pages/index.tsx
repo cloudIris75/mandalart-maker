@@ -32,10 +32,10 @@ const Home: NextPage = () => {
 
   const onCaptureButtonClick = () => {
     if (captureArea.current) {
-      html2canvas(captureArea.current).then(function (canvas) {
+      html2canvas(captureArea.current).then((canvas) => {
         const element = document.createElement('a');
-        element.href = canvas.toDataURL('image/jpeg');
-        element.download = '2023_Mandalart.jpg';
+        element.href = canvas.toDataURL('image/png');
+        element.download = '2023_Mandalart.png';
         element.click();
       });
     }
