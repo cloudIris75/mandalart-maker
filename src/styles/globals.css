@@ -19,7 +19,7 @@ pre {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  @apply w-8 rounded-md m-auto break-keep overflow-hidden;
+  @apply w-9 h-9 rounded-md m-auto break-keep overflow-hidden table-cell align-middle;
 }
 
 html {

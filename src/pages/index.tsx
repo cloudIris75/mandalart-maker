@@ -51,8 +51,9 @@ const Home: NextPage = () => {
   };
 
   return (
-    <main className="px-4 py-6 flex flex-col items-center space-y-6">
+    <main className="relative px-4 py-6 flex flex-col items-center space-y-6">
       <h1 className="text-3xl text-vivaMegenta">2023 만다라트 메이커 🥕</h1>
+      <Widget />
       <div
         ref={captureArea}
         className="relative outline outline-4 outline-border w-350 h-630"
@@ -63,7 +64,6 @@ const Home: NextPage = () => {
           fill
           quality={100}
         ></Image>
-        <Widget />
         <table className="table-lg z-10 absolute top-32 left-0 w-full border-separate border-spacing-y-2">
           <tbody>
             <tr>
