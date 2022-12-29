@@ -5,6 +5,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        '2xs': '0.5rem',
+      },
+      lineHeight: {
+        2: '0.6rem',
+      },
       width: {
         350: '350px',
         390: '390px',

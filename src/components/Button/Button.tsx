@@ -13,16 +13,6 @@ const Button: React.FC<ButtonProps> = ({
   setIsVisible,
   goals,
 }) => {
-  const tablePosition = () => {
-    if (number === 0 || number === 3 || number == 6) {
-      return 'left';
-    } else if (number === 2 || number === 5 || number == 8) {
-      return 'right';
-    } else {
-      return 'middle';
-    }
-  };
-
   const onButtonClick = () => {
     setNumber(number);
     setIsVisible(true);
@@ -30,15 +20,7 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <div onClick={onButtonClick} className="h-28">
-      <table
-        className={`table-sm text-center h-full ${
-          tablePosition() === 'left'
-            ? 'ml-2'
-            : tablePosition() === 'right'
-            ? 'mr-2'
-            : 'mx-1'
-        }`}
-      >
+      <table className="table-sm text-center h-full w-full">
         <tbody>
           <tr>
             <td>

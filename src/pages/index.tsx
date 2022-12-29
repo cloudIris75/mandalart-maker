@@ -57,7 +57,7 @@ const Home: NextPage = () => {
         className="relative outline outline-4 outline-border w-350 h-630"
       >
         <Image
-          src="https://mandalart-bucket.s3.ap-northeast-2.amazonaws.com/images/background.png"
+          src="https://mandalart-bucket.s3.ap-northeast-2.amazonaws.com/images/background.PNG"
           alt="2023 Mandalart"
           fill
           quality={100}

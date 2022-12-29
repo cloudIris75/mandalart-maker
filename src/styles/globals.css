@@ -17,7 +17,7 @@
 pre {
   font-family: 'KOTRAHOPE';
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   @apply w-8 rounded-md m-auto break-keep overflow-hidden;
 }
@@ -31,7 +31,7 @@ body {
 }
 
 textarea {
-  @apply h-24 w-24 border-none bg-transparent text-3xl text-center mt-2 pt-4 resize-none;
+  @apply h-24 w-24 border-none bg-transparent text-xl text-center pt-4 resize-none;
 }
 
 .table-lg td {
@@ -39,7 +39,7 @@ textarea {
 }
 
 .table-sm td {
-  @apply h-9 w-9 text-xs;
+  @apply h-9 w-9 text-2xs leading-2;
 }
 
 .button {
