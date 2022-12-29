@@ -161,6 +161,9 @@ const Home: NextPage = () => {
         <button onClick={onResetButtonClick} className="button">
           초기화 🚨
         </button>
+        <span className="text-border pt-2">
+          ⓒ 2022. Iris All rights reserved.
+        </span>
       </div>
     </main>
   );
