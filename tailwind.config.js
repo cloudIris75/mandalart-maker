@@ -19,10 +19,6 @@ module.exports = {
         630: '630px',
         844: '844px',
       },
-      spacing: {
-        18: '4.75rem',
-        26: '6.75em',
-      },
       colors: {
         vivaMegenta: '#BB2649',
         hover: '#D93060',

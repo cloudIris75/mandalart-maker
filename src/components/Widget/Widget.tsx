@@ -14,7 +14,7 @@ const Widget: React.FC = () => {
   return (
     <a
       id="swyg-widget"
-      className="box-border fixed flex justify-center justify-items-center items-center rounded-full bg-white cursor-pointer z-50 top-18 right-26 w-10 h-10 p-1"
+      className="box-border absolute flex justify-center justify-items-center items-center rounded-full bg-white cursor-pointer z-50 top-3 right-3 w-10 h-10 p-1"
       target="_blank"
       rel="noreferrer"
       href={`https://www.swygbro.com?utm_source=${source}&utm_medium=widget&utm_campaign=all_time`}
