@@ -30,13 +30,6 @@ const Home: NextPage = () => {
     }
   }, []);
 
-  useEffect(() => {
-    window.addEventListener('DOMContentLoaded', () => {
-      setGAScripts();
-      setAdsenseScripts();
-    });
-  }, []);
-
   const onCaptureButtonClick = () => {
     if (captureArea.current) {
       html2canvas(captureArea.current).then((canvas) => {
@@ -55,36 +48,6 @@ const Home: NextPage = () => {
       setGoals(resetArray);
       localStorage.setItem('key', JSON.stringify(resetArray));
     }
-  };
-
-  const setGAScripts = () => {
-    const asyncScriptElement = document.createElement('script');
-    const functionScriptElement = document.createElement('script');
-    const functionScript = `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-M6R8GGRBN6');
-  `;
-
-    asyncScriptElement.async = true;
-    asyncScriptElement.src =
-      'https://www.googletagmanager.com/gtag/js?id=G-M6R8GGRBN6';
-    functionScriptElement.innerHTML = functionScript;
-
-    document.head.appendChild(asyncScriptElement);
-    document.head.appendChild(functionScriptElement);
-  };
-
-  const setAdsenseScripts = () => {
-    const scriptElement = document.createElement('script');
-
-    scriptElement.async = true;
-    scriptElement.src =
-      'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1919598055512436';
-    scriptElement.crossOrigin = 'anonymous';
-
-    document.head.appendChild(scriptElement);
   };
 
   return (
