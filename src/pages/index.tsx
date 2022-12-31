@@ -49,7 +49,7 @@ const Home: NextPage = () => {
   };
 
   const onResetButtonClick = () => {
-    const confirm = window.confirm('만다라트를 정말 초기화하시나요?');
+    const confirm = window.confirm('Are you sure you want to reset Mandalart?');
     if (confirm) {
       const resetArray = [[], [], [], [], [], [], [], [], []];
       setGoals(resetArray);
@@ -89,7 +89,7 @@ const Home: NextPage = () => {
 
   return (
     <main className="relative px-4 py-6 flex flex-col items-center space-y-6">
-      <h1 className="text-3xl text-vivaMegenta">2023 만다라트 메이커 🥕</h1>
+      <h1 className="text-3xl text-vivaMegenta">2023 Mandalart Maker 🥕</h1>
       <Widget />
       <div
         ref={captureArea}
@@ -192,11 +192,17 @@ const Home: NextPage = () => {
         />
       </div>
       <div className="flex flex-col justify-center items-center space-y-4">
-        <button onClick={onCaptureButtonClick} className="button">
-          이미지 저장 🍀
+        <button
+          onClick={onCaptureButtonClick}
+          className="button bg-vivaMegenta text-white"
+        >
+          📦 DOWNLOAD
         </button>
-        <button onClick={onResetButtonClick} className="button">
-          초기화 🚨
+        <button
+          onClick={onResetButtonClick}
+          className="button border-2 border-vivaMegenta text-border"
+        >
+          🚨 RESET
         </button>
         <span className="text-border pt-2">
           ⓒ 2022. Iris All rights reserved.

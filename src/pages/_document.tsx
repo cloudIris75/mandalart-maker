@@ -8,8 +8,8 @@ function MyDocument() {
           rel="icon"
           href="https://mandalart-bucket.s3.ap-northeast-2.amazonaws.com/favicon/2023mandalart.PNG"
         />
-        <meta property="og:site_name" content="2023 만다라트 메이커" />
-        <meta property="og:title" content="2023 만다라트 메이커" />
+        <meta property="og:site_name" content="2023 Mandalart Maker" />
+        <meta property="og:title" content="2023 Mandalart Maker" />
         <meta
           property="og:description"
           content="쉽고 빠른 새해 목표 세우기 🥕"

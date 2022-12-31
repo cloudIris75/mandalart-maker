@@ -43,5 +43,5 @@ textarea {
 }
 
 .button {
-  @apply rounded-xl w-60 py-2 bg-vivaMegenta hover:bg-hover text-white text-xl;
+  @apply rounded-xl w-60 py-2 text-xl hover:opacity-75;
 }
