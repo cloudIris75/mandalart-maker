@@ -8,6 +8,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>2023 Mandalart Maker</title>
+        <script
+          defer
+          src="https://cdn.swygbro.com/public/widget/swyg-widget.js"
+        ></script>
       </Head>
       <Component {...pageProps} />
     </>
